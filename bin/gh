@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+REPO=$(git ls-remote --get-url | cut -d ':' -f2)
+open "https://github.com/${REPO: : -4}"
