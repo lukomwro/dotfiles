@@ -1,0 +1,17 @@
+#!/bin/bash
+
+options="-d"
+TMP_FILE_NAME=/tmp/merged-branches
+
+while getopts "f" arg; do
+  case $arg in
+    f)
+      options="-D"
+      ;;
+  esac
+done
+
+git fetch -p; 
+echo "# REMOVE BRANCHES:" > $TMP_FILE_NAME 
+git branch -vv | grep ': gone]' | awk '{print $1}' >> $TMP_FILE_NAME 
+vim /tmp/merged-branches && sed '/^[[:blank:]]*#/d;s/#.*//' $TMP_FILE_NAME | xargs git branch ${options}
