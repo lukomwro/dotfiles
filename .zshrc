@@ -1,7 +1,8 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/lukom/.oh-my-zsh
+export ZSH=/Users/$USER/.oh-my-zsh
 export EDITOR=vim
+DOTFILES_DIR=/Users/$USER/.dotfiles
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -55,7 +56,7 @@ plugins=(git git-extras github gitignore docker docker-compose osx sudo npm urlt
 
 # User configuration
 
-export PATH="$(brew --prefix git)/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/lukom/.bin:/Users/lukom/.rvm/gems/ruby-2.3.1/bin:/Users/lukom/dotfiles/bin:/Users/lukom/.npm/bin"
+export PATH="$(brew --prefix git)/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/$USER/.bin:/Users/$USER/.rvm/gems/ruby-2.3.1/bin:$DOTFILES_DIR/bin:/Users/$USER/.npm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -82,9 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-source ~/.aliases
-source ~/.exports
-
-export NVM_DIR="/Users/lukom/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source $DOTFILES_DIR/.aliases
+source $DOTFILES_DIR/.aliases-work
+source $DOTFILES_DIR/.exports
