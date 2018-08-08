@@ -8,7 +8,7 @@ alias previewup='cp ~/Workspace/uxpin-docker/node_modules/uxpin-engine/dist/engi
 alias rbapp='app && cd node_modules/uxpin-engine && gulp build:debug && cd - && ./node_modules/.bin/browserify editor/js/app.jsx -t [ babelify ] -t [ envify --NODE_ENV development ] > public/uxpin.js'
 alias dockertime='docker run -it --rm --privileged --pid=host debian nsenter -t 1 -m -u -n -i date -u $(date -u +%m%d%H%M%Y)'
 alias reactmod='jscodeshift -t /Users/lukom/Workspace/react-codemod/transforms/class.js --mixin-module-name=react-addons-pure-render-mixin --flow=true --pure-component=true --remove-runtime-proptypes=false'
-alias engineup='yarn upgrade @uxpin/engine && git commit -am "yarn - upgrade uxpin-engine"'
+alias engineup='yarn upgrade @uxpin/engine && gco package.json && yarn install'
 alias lux='ls -l node_modules | grep uxpin'
 alias eslintc='git diff --cached --name-only | xargs node_modules/.bin/eslint'
 projects=( app api code-tools code-sync export-plugins preview dashboard )
