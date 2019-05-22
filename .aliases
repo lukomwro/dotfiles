@@ -2,11 +2,7 @@
 
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias dockerup='cd ~/Workspace/uxpin-docker && docker-machine kill uxpin; make run-minimum; cd -'
 alias dcomp="docker-compose"
-
-alias cddocker="cd ~/Workspace/uxpin-docker"
-alias nginx_refresh='cd ~/Workspace/uxpin-docker; ./run app sed -i "s/sendfile *on/sendfile off/" /etc/nginx/nginx.conf; ./run app pkill nginx; cd -'
 
 alias npmi="npm cache clean && npm install"
 alias npmii="rm -rf node_modules && npm cache clean && npm install"
@@ -19,3 +15,4 @@ alias ..5="cd ../../../../.."
 
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias yax="PATH=$(yarn bin):$PATH"
+alias cx="corgi exec"
