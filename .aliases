@@ -14,5 +14,4 @@ alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-alias yax="PATH=$(yarn bin):$PATH"
 alias cx="corgi exec"
